@@ -21,7 +21,7 @@ export const Sidebar = () => (
           <span class="ml-3">Dashboard</span>
         </a>
       </li>
-      <li>
+      {/* <li>
         <a
           href="/"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -37,10 +37,10 @@ export const Sidebar = () => (
           </svg>
           <span class="flex-1 ml-3 whitespace-nowrap">Cloud Function</span>
         </a>
-      </li>
+      </li> */}
       <li>
         <a
-          href="/"
+          href="/ingredients"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
         >
           <svg
@@ -58,7 +58,7 @@ export const Sidebar = () => (
       </li>
       <li>
         <a
-          href="/"
+          href="/users"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
         >
           <svg
@@ -77,7 +77,7 @@ export const Sidebar = () => (
           <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
         </a>
       </li>
-      <li>
+      {/* <li>
         <a
           href="/"
           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -97,7 +97,7 @@ export const Sidebar = () => (
           </svg>
           <span class="flex-1 ml-3 whitespace-nowrap">Landing</span>
         </a>
-      </li>
+      </li> */}
     </ul>
   </div>
 );
