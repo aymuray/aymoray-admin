@@ -1,4 +1,7 @@
 import Header from "../components/Header";
+import { ButtonAddUser } from "../components/Users/ButtonAddUser";
+import { SearchUser } from "../components/Users/SearchUser";
+import { TableUsers } from "../components/Users/TableUsers";
 
 export function Users() {
   return (
@@ -8,7 +11,11 @@ export function Users() {
         <div class="w-full">
           <main>
             <div class="mx-5 my-5">
-              <label> Usuarios </label>
+              <div class="flex justify-between">
+                <SearchUser></SearchUser>
+                <ButtonAddUser></ButtonAddUser>
+              </div>
+              <TableUsers></TableUsers>
             </div>
           </main>
         </div>
