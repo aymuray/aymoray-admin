@@ -10,12 +10,12 @@ export function Ingredients() {
   const [ingredients, setIngredients] = useState([]);
 
   const getAllUsers = () => {
-    onSnapshot(collection(db, "Alimentos"), (querySnapshot) =>{
+    onSnapshot(collection(db, "Alimentos"), (querySnapshot) => {
       const docs = [];
-      querySnapshot.forEach(doc => {
-        docs.push({...doc.data(), id:doc.id})
-      })
-      setIngredients(docs)
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setIngredients(docs);
     });
   };
   useEffect(() => {
@@ -26,15 +26,13 @@ export function Ingredients() {
       <div className="w-full">
         <Header ContentTitle={"Ingredientes"}></Header>
         <div class="w-full">
-          <main>
-            <div class="mx-5 my-5">
-            <div class="flex justify-between">
+            <div class="mx-5 my-5 flex flex-col h-full">
+              <div class="flex justify-between">
                 <Search placeholder={"Search Ingredients"}></Search>
                 <ButtonAddIngredient></ButtonAddIngredient>
               </div>
               <TableIngredient ingredients={ingredients}></TableIngredient>
             </div>
-          </main>
         </div>
       </div>
     </div>
