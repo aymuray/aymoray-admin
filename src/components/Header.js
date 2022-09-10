@@ -12,7 +12,6 @@ export function Header({ ContentTitle }) {
   };
 
   return (
-    <div class="w-full">
       <header class="bg-white shadow">
         <div class="w-full py-6 px-4 sm:px-6 lg:px-8  flex justify-between">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900">
@@ -35,7 +34,6 @@ export function Header({ ContentTitle }) {
           </button>
         </div>
       </header>
-    </div>
   );
 }
 

@@ -22,19 +22,15 @@ export function Ingredients() {
     getAllUsers();
   }, []);
   return (
-    <div className="flex w-full">
-      <div className="w-full">
+      <div class="w-full h-full overflow-y-hidden">
         <Header ContentTitle={"Ingredientes"}></Header>
-        <div class="w-full">
-            <div class="mx-5 my-5 flex flex-col h-full">
+            <div class="static mx-5 my-1">
               <div class="flex justify-between">
                 <Search placeholder={"Search Ingredients"}></Search>
                 <ButtonAddIngredient></ButtonAddIngredient>
               </div>
               <TableIngredient ingredients={ingredients}></TableIngredient>
             </div>
-        </div>
-      </div>
     </div>
   );
 }

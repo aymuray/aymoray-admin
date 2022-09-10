@@ -8,7 +8,7 @@ import Users from "./page/Users";
 
 function App() {
   return (
-    <div className="bg-slate-300 h-screen flex">
+    <div class="static bg-slate-300 flex h-screen overflow-y-hidden">
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
