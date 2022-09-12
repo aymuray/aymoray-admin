@@ -4,13 +4,16 @@ import { Container } from "../components/Container/Container";
 import Header from "../components/Header/Header";
 import { ButtonAddIngredient } from "../components/Ingredients/ButtonAddIngredient";
 import { TableIngredient } from "../components/Ingredients/TableIngredient";
+import { Pagination } from "../components/Pagination/Pagination";
 import { Search } from "../components/Search";
 import { db } from "../firebase";
 
 export function Ingredients() {
+  const [numberElements, setnumberElements] = useState(10)
+
   const [ingredients, setIngredients] = useState([]);
 
-  const getAllUsers = () => {
+  const getAllIngredients= () => {
     onSnapshot(collection(db, "Alimentos"), (querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
@@ -19,9 +22,11 @@ export function Ingredients() {
       setIngredients(docs);
     });
   };
+
   useEffect(() => {
-    getAllUsers();
+    getAllIngredients();
   }, []);
+
   return (
     <div className="main">
       <Header ContentTitle={"Ingredientes"}></Header>
@@ -32,6 +37,7 @@ export function Ingredients() {
       </div>
       <div className="container-body">
         <TableIngredient ingredients={ingredients}></TableIngredient>
+        <Pagination selected={1} length={71} numberElements={10}></Pagination>
       </div>
       </Container>
      

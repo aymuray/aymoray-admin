@@ -1,5 +1,3 @@
-import React from "react";
-
 export const TableIngredient = ({ ingredients }) => {
   return (
     <div className="table-scroll table-wrapper-scroll-y table-responsive">
