@@ -1,0 +1,113 @@
+:root{
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    transition: var(--tran-05);
+    z-index: 100;
+}
+.sidebar .text{
+    transition: var(--tran-04);
+    white-space: nowrap;
+}
+.sidebar.close{
+    width: 88px;
+}
+.sidebar.close .text{
+    position: relative;
+    opacity: 0;
+    transition: var(--tran-04);
+    pointer-events:none;
+}
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar .image {
+    min-width: 60px;
+}
+.sidebar .image-text{
+    text-align: center;
+}
+.sidebar .image-text img{
+    position: relative;
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar header ion-icon{
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+
+    background: rgba(13, 110, 253, 1);
+
+}
+
+.sidebar li ion-icon{
+    min-width: 60px;
+    font-size: 25px;
+    color: var(--bs-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .text{
+    color: var(--bs-white);
+    font-size: 20px;
+}
+
+.sidebar li #NavLink{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+.sidebar li #NavLink:hover{
+    background-color: var(--bs-light);
+}
+.sidebar li #NavLink:hover ion-icon,
+.sidebar li #NavLink:hover .text{
+    color: var(--bs-black);
+    transition: var(--tran-02);
+}
+
+.sidebar .menu-bar .menu .menu-links{
+    padding-left: 0px
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

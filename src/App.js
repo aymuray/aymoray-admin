@@ -1,12 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
+import Home from "./page/Home";
+import Ingredients from "./page/Ingredients";
+import Users from "./page/Users";
 
 function App() {
   return (
-    <div className="bg-slate-300 h-screen flex">
+    <div class="bg-slate-300 flex h-screen w-screen overflow-x-hidden">
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -14,7 +16,23 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <Home />
+                <Home/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <ProtectedRoute>
+                <Users />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/ingredients"
+            element={
+              <ProtectedRoute>
+                <Ingredients />
               </ProtectedRoute>
             }
           />
