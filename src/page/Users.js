@@ -32,8 +32,8 @@ export function Users() {
         <ButtonAddUser></ButtonAddUser>
       </div>
       <div className="container-body">
+        <TableUsers users={users}></TableUsers>
       </div>
-      {/* <TableUsers users={users}></TableUsers> */}
       </Container>
      
     </div>

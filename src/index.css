@@ -1,24 +1,31 @@
-.main{
-    position: absolute;
-    left: 88px;
-    width: calc(100% - 88px);
-    height: 100%;
-
+.main {
+  position: absolute;
+  left: 88px;
+  width: calc(100% - 88px);
+  height: 100%;
 }
 
-.container-top{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    text-align: center;
-    align-items: center;
+.container-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  text-align: center;
+  align-items: center;
 }
 
-.container-body{
-    position: relative;
-    background-color: rebeccapurple;
-    width: calc(100% - 30px);
-    height: calc(95% - 30px);
-    margin: 0px 15px;
+.container-body {
+  position: relative;
+  width: calc(100% - 30px);
+  height: calc(95% - 30px);
+  margin: 0px 15px;
+}
 
+.table-scroll{
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
 }

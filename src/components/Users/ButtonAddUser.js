@@ -14,7 +14,7 @@ export const ButtonAddUser = () => {
 
   return (
     <div>
-      <button type="button" class="btn btn-primary">
+      <button type="button" className="btn btn-primary">
         Agregar Usuario
       </button>
       {modalOn && (

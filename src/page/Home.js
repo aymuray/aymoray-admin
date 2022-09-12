@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 export function Home() {
   return (
     <div className="main">
-    <Header ContentTitle={"Usuarios"}></Header>
+    <Header ContentTitle={"Dashboard"}></Header>
     <Container></Container>
   </div>
   );
