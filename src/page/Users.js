@@ -1,6 +1,7 @@
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import { Container } from "../components/Container/Container";
+import Header from "../components/Header/Header";
 import { Search } from "../components/Search";
 import { ButtonAddUser } from "../components/Users/ButtonAddUser";
 import { TableUsers } from "../components/Users/TableUsers";
@@ -10,12 +11,12 @@ export function Users() {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = () => {
-    onSnapshot(collection(db, "usuarios"), (querySnapshot) =>{
+    onSnapshot(collection(db, "usuarios"), (querySnapshot) => {
       const docs = [];
-      querySnapshot.forEach(doc => {
-        docs.push({...doc.data(), id:doc.id})
-      })
-      setUsers(docs)
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setUsers(docs);
     });
   };
   useEffect(() => {
@@ -23,19 +24,18 @@ export function Users() {
   }, []);
 
   return (
-    <div className="flex w-full">
-      <div className="w-full">
-        <Header ContentTitle={"Users"}></Header>
-        <div class="w-full">
-            <div class="mx-5 my-5">
-              <div class="flex justify-between">
-                <Search placeholder={"Search Users"}></Search>
-                <ButtonAddUser></ButtonAddUser>
-              </div>
-              <TableUsers users={users}></TableUsers>
-            </div>
-        </div>
+    <div className="main">
+      <Header ContentTitle={"Usuarios"}></Header>
+      <Container>
+      <div className="container-top">
+        <Search placeholder={"Buscar usuario"}></Search>
+        <ButtonAddUser></ButtonAddUser>
       </div>
+      <div className="container-body">
+      </div>
+      {/* <TableUsers users={users}></TableUsers> */}
+      </Container>
+     
     </div>
   );
 }

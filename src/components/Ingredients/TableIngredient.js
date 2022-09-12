@@ -2,8 +2,8 @@ import React from "react";
 
 export const TableIngredient = ({ ingredients }) => {
   return (
-      <div class="relative pb-20 h-screen grid gap-4 overflow-x-auto shadow-md sm:rounded-lg pb-5">
-        <table class="text-sm text-left text-gray-500 dark:text-gray-400 ">
+      <div class="grid gap-4 overflow-auto shadow-md sm:rounded pb-5">
+        <table class="h-full w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th class="py-3 px-6">

@@ -1,3 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.main{
+    position: absolute;
+    left: 88px;
+    width: calc(100% - 88px);
+    height: 100%;
+
+}
+
+.container-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.container-body{
+    position: relative;
+    background-color: rebeccapurple;
+    width: calc(100% - 30px);
+    height: calc(95% - 30px);
+    margin: 0px 15px;
+
+}

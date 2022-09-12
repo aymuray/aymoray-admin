@@ -1,6 +1,7 @@
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import { Container } from "../components/Container/Container";
+import Header from "../components/Header/Header";
 import { ButtonAddIngredient } from "../components/Ingredients/ButtonAddIngredient";
 import { TableIngredient } from "../components/Ingredients/TableIngredient";
 import { Search } from "../components/Search";
@@ -22,15 +23,18 @@ export function Ingredients() {
     getAllUsers();
   }, []);
   return (
-      <div class="w-full h-full overflow-y-hidden">
-        <Header ContentTitle={"Ingredientes"}></Header>
-            <div class="static mx-5 my-1">
-              <div class="flex justify-between">
-                <Search placeholder={"Search Ingredients"}></Search>
-                <ButtonAddIngredient></ButtonAddIngredient>
-              </div>
-              <TableIngredient ingredients={ingredients}></TableIngredient>
-            </div>
+    <div className="main">
+      <Header ContentTitle={"Ingredientes"}></Header>
+      <Container>
+      <div className="container-top">
+        <Search placeholder={"Buscar ingrediente"}></Search>
+        <ButtonAddIngredient></ButtonAddIngredient>
+      </div>
+      <div className="container-body">
+        <TableIngredient ingredients={ingredients}></TableIngredient>
+      </div>
+      </Container>
+     
     </div>
   );
 }

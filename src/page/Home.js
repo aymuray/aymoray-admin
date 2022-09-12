@@ -1,19 +1,12 @@
-import Header from "../components/Header";
+import { Container } from "../components/Container/Container";
+import Header from "../components/Header/Header";
 
 export function Home() {
   return (
-    <div className="flex w-full">
-      <div className="w-full">
-        <Header ContentTitle={"Dashboard"}></Header>
-        <div class="w-full">
-          <main>
-            <div class="mx-5 my-5">
-              <label> Dashboard </label>
-            </div>
-          </main>
-        </div>
-      </div>
-    </div>
+    <div className="main">
+    <Header ContentTitle={"Usuarios"}></Header>
+    <Container></Container>
+  </div>
   );
 }
 

@@ -1,13 +1,12 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./Sidebar/Sidebar";
 
-function ProtectedRoute({children }) {
+function ProtectedRoute({children}) {
     const { user, loading } = useAuth();
-    if (loading) return <h1>Loading</h1>;
-    if (!user) return <Navigate to="/login" />;
-    return <><Sidebar className="fit-content"></Sidebar>
-    {children}</>;
+    if (!loading && !user) return <Navigate to="/login" />;
+    return <div><Sidebar></Sidebar>
+    {children}</div>;
 }
 
 export default ProtectedRoute

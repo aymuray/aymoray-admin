@@ -8,7 +8,7 @@ import Users from "./page/Users";
 
 function App() {
   return (
-    <div class="static bg-slate-300 flex h-screen overflow-y-hidden">
+    <div class="bg-slate-300 flex h-screen w-screen overflow-x-hidden">
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -16,7 +16,7 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <Home />
+                <Home/>
               </ProtectedRoute>
             }
           />

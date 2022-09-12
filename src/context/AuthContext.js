@@ -18,7 +18,7 @@ export const useAuth = () => {
 }
 
 export function AuthProvider({ children }) {
-const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const login = (email, password) => signInWithEmailAndPassword(auth,email,password)
   const loginWithGoogle = () => {
@@ -28,6 +28,7 @@ const [user, setUser] = useState(null);
   const logout = () => signOut(auth);
   const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
   useEffect(() => {
+    console.log(auth);
     const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log({ currentUser });
       setUser(currentUser);
