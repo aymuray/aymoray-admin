@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import "./Pagination.css";
 
-export const Pagination = ({length,numberElements,selected}) => {
-  const [maxPage, setMaxpage] = useState(1)
-  const arrayPagination = [];
-  const CrearPaginacion = (maxPage, selected) => {
+export const Pagination = ({tableElements,numberElements, currentPage, setCurrentPage}) => {
+
+  const rowsPage = [];
+  const maxPage = Math.ceil(numberElements/tableElements)
+  const makePages = () => {
     for (let index = 1; index <= maxPage; index++) {
-      index === selected
-        ? arrayPagination.push(
-            ...arrayPagination,
+      index === currentPage
+        ? rowsPage.push(
+            ...rowsPage,
             <li key={index}  className="page-item active">
               <span className="page-link" href="#">
                 {index}
               </span>
             </li>
           )
-        : arrayPagination.push(
-            ...arrayPagination,
+        : rowsPage.push(
+            ...rowsPage,
             <li key={index} className="page-item">
               <span className="page-link" href="#">
                 {index}
@@ -25,17 +27,17 @@ export const Pagination = ({length,numberElements,selected}) => {
           );
     }
   };
+
   useEffect(() => {
-    setMaxpage(Math.ceil(length/numberElements))
-    CrearPaginacion(maxPage, selected);
-  }, [length,numberElements,selected]);
+    makePages();
+  },[currentPage])
 
   return (
     <ul className="pagination justify-content-end">
       <li className="page-item disabled">
         <span className="page-link">Previous</span>
       </li>
-      {arrayPagination.map((page) => page)}
+        {rowsPage.map((page) => {return page})}
       <li className="page-item">
         <span className="page-link" href="#">
           Next

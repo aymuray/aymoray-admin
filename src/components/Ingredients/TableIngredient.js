@@ -16,8 +16,8 @@ export const TableIngredient = ({ ingredients }) => {
           </tr>
         </thead>
         <tbody>
-          {ingredients.map((user) => (
-            <tr>
+          {ingredients.map((user, index) => (
+            <tr key={index}>
               <td>{user.Nombre}</td>
               <td>{user.Cals}</td>
               <td>{user.Carbh}</td>

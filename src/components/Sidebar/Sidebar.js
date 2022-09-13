@@ -13,9 +13,6 @@ export const Sidebar = () => {
       console.error(error.message);
     }
   };
-  const handleOpen = () =>{
-    setIsClose(false);
-  }
   const handleClose = () =>{
     setIsClose(true);
   }
@@ -83,8 +80,8 @@ export const Sidebar = () => {
       <div className="menu-bar">
         <div className="menu">
           <ul className="menu-links">
-            {sidebarData.menu.map((menuoption)=> (
-              <li className="nav-link">
+            {sidebarData.menu.map((menuoption, index)=> (
+              <li key={index} className="nav-link">
               <NavLink id="NavLink" to={menuoption.route} className="menu-item is-active" onClick={handleClose}>
                 {menuoption.icon}
                 <span className="text nav-text">{menuoption.label}</span>
@@ -94,8 +91,8 @@ export const Sidebar = () => {
           </ul>
         </div>
         <div className="bottom-content">
-          {sidebarData.bottom.map((menuoption)=> (
-              <li className="nav-link" onClick = {menuoption.isLogout ? handleLogout : ""}>
+          {sidebarData.bottom.map((menuoption, index)=> (
+              <li key={index} className="nav-link" onClick = {menuoption.isLogout ? handleLogout : null}>
               <NavLink id="NavLink" to={menuoption.route} className="menu-item is-active" onClick={handleClose}>
                 {menuoption.icon}
                 <span className="text nav-text">{menuoption.label}</span>
